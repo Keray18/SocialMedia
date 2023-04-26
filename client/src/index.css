@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Gurmukhi:wght@500&family=Anuphan:wght@100&family=Crimson+Text:ital,wght@1,700&family=EB+Garamond:ital@1&family=Eagle+Lake&family=Exo+2:wght@300&family=Montserrat:wght@200&family=Philosopher&family=Poppins:wght@200&family=Roboto+Slab&family=Roboto:ital@1&family=Rubik:wght@400;500;600&family=Schibsted+Grotesk&display=swap');
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  width: 100%;
+  font-family: 'Rubik', sans-serif;
+}
