@@ -1,14 +1,14 @@
 import express from 'express';
-import { getUser,getUserFrnds,addRemoveFrnd } from '../controllers/users.js';
+import { getUser, getUserfriends, addRemovefriend } from '../controllers/users.js';
 import { verifyToken } from '../middleware/auth.js';
 
 const router = express.Router();
 
 /* READ */
 router.get("/:id", verifyToken, getUser);
-router.get("/:id/:frnds", verifyToken, getUserFrnds);
+router.get("/:id/:Friends", verifyToken, getUserfriends);
 
 /* UPDATE */
-router.patch("/:id/frndId", verifyToken, addRemoveFrnd);
+router.patch("/:id/FriendId", verifyToken, addRemovefriend);
 
 export default router;
