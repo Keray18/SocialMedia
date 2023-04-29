@@ -51,7 +51,7 @@ app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
-const port = process.env.PORT || 3001;
+const port = 3001/*process.env.PORT || 3001*/;
 mongoose
   .connect(process.env.MONGO_URI, {
     dbName: "SocialMedia",
