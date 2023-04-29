@@ -20,7 +20,7 @@ const UserWidget = ({ userId, picturePath }) => {
         const response = await fetch(`http://localhost:3001/users/${ userId }`,
         {
             method: "GET",
-            headers: { Authorization: `Token ${token}`}
+            headers: { Authorization: `Bearer ${token}`}
         })
         const data = await response.json()
         setUser(data)

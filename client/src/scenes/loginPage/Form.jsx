@@ -70,7 +70,7 @@ const Form = () => {
         onSubmitProps.resetForm()
 
         if (savedUser) {
-            setPageType("Login")
+            setPageType("login")
         }
     }
 

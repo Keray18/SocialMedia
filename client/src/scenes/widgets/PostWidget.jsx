@@ -22,8 +22,9 @@ const PostWidget = ({
     const dispatch = useDispatch()
     const token = useSelector( (state) => state.token)
     const loggedInUserId = useSelector( (state) => state.user._id)
-    const isLiked = Boolean(likes[loggedInUserId])
-    const likeCount = Object.keys(likes).length
+    // const isLiked = Boolean(likes[loggedInUserId])
+    // const likeCount = Object.keys(likes).length
+    
 
 
     const { palette } = useTheme()
@@ -35,7 +36,7 @@ const PostWidget = ({
         {
             method: "PATCH",
             headers: {
-                Authorization: `Token ${token}`,
+                Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ userId: loggedInUserId }),
@@ -43,6 +44,7 @@ const PostWidget = ({
         const updatePost = await response.json()
         dispatch(setPost({ post: updatePost }))
     }
+    
 
     return (
         <WidgetWrapper m="2rem 0">
@@ -70,13 +72,13 @@ const PostWidget = ({
 
                     <FlexBetween gap="0.3rem">
                         <IconButton onClick={patchLike}>
-                            {isLiked ? (
+                            {/* {isLiked ? (
                                 <FavoriteOutlined sx={{ color: primary }} />
                             ) : (
                                 <FavoriteBorderOutlined />
-                            )}
-                        </IconButton>
-                        <Typography>{likeCount}</Typography>
+                            )} */}
+                        </IconButton>Hi
+                        <Typography>likeCount</Typography>
                     </FlexBetween>
 
 
@@ -109,6 +111,7 @@ const PostWidget = ({
             )}
         </WidgetWrapper>
     )
+    
 }
 
 export default PostWidget
