@@ -51,13 +51,13 @@ app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
-const PORT = 3001;
+const port = process.env.PORT || 3001;
 mongoose
   .connect(process.env.MONGO_URI, {
     dbName: "SocialMedia",
   })
   .then(() => {
-    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+    app.listen(port, () => console.log(`Server Port: ${port}`));
 
   })
   .catch((error) => console.log(`${error} did not connect`));
