@@ -16,7 +16,7 @@ const ProfilePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-Width: 1000px)")
 
   const getUser = async () => {
-    const response = await fetch(`/users/${userId}`,
+    const response = await fetch(`https://mern-socially-backend.onrender.com/users/${userId}`,
     {
       method: "GET",
       headers: { Authorization: `Bearer ${token}`}

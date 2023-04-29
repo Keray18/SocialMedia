@@ -17,7 +17,7 @@ const UserWidget = ({ userId, picturePath }) => {
     const main = palette.neutral.main 
 
     const getUser = async () => {
-        const response = await fetch(`/users/${ userId }`,
+        const response = await fetch(`https://mern-socially-backend.onrender.com/users/${ userId }`,
         {
             method: "GET",
             headers: { Authorization: `Bearer ${token}`}
@@ -50,7 +50,7 @@ const UserWidget = ({ userId, picturePath }) => {
             <FlexBetween
                 gap="0.5rem"
                 pb="1.1rem"
-                onClick={ () => navigate(`/profile/${ userId }`)}
+                onClick={ () => navigate(`https://mern-socially-backend.onrender.com/profile/${ userId }`)}
             >
                 <FlexBetween gap="1rem">
                     <UserImage image={picturePath} />
