@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import { setLogin } from 'state'
 import Dropzone from 'react-dropzone'
 import FlexBetween from 'components/FlexBetween'
+// import axios from 'axios'
 
 
 const registerSchema = yup.object().shape({
@@ -60,12 +61,18 @@ const Form = () => {
         formData.append('picturePath', values.picture.name)
 
         const savedUserResponse = await fetch(
-            "https://mern-socially-backend.onrender.com/auth/register",
+            "http://localhost:3001/auth/register",
             {
                 method: "POST",
                 body: formData,
             }
         )
+        // const savedUser = await axios({
+        //     method: 'post',
+        //     url: 'https://mern-socially-backend.onrender.com/auth/register',
+        //     data: { formData }
+        // })
+        
         const savedUser = await savedUserResponse.json()
         onSubmitProps.resetForm()
 
@@ -76,7 +83,7 @@ const Form = () => {
 
     const login = async (values, onSubmitProps) => {
         const loggedInResponse = await fetch(
-                "https://mern-socially-backend.onrender.com/auth/login",
+                "http://localhost:3001/auth/login",
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
