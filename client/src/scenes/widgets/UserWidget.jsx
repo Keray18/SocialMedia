@@ -17,7 +17,7 @@ const UserWidget = ({ userId, picturePath }) => {
     const main = palette.neutral.main 
 
     const getUser = async () => {
-        const response = await fetch(`http://localhost:3001/users/${ userId }`,
+        const response = await fetch(`https://socially-4p72.onrender.com/users/${ userId }`,
         {
             method: "GET",
             headers: { Authorization: `Bearer ${token}`}
@@ -50,7 +50,7 @@ const UserWidget = ({ userId, picturePath }) => {
             <FlexBetween
                 gap="0.5rem"
                 pb="1.1rem"
-                onClick={ () => navigate(`http://localhost:3001/profile/${ userId }`)}
+                onClick={ () => navigate(`https://socially-4p72.onrender.com/profile/${ userId }`)}
             >
                 <FlexBetween gap="1rem">
                     <UserImage image={picturePath} />

@@ -9,7 +9,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     const token = useSelector( (state) => state.token)
 
     const getPosts = async () => {
-        const response = await fetch("http://localhost:3001/posts",
+        const response = await fetch("https://socially-4p72.onrender.com/posts",
         {
             method: "GET",
             headers: { Authorization: `Bearer ${token}`},
@@ -20,7 +20,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     }
 
     const getUserPosts = async () => {
-        const response = await fetch(`http://localhost:3001/posts/${userId}`,
+        const response = await fetch(`https://socially-4p72.onrender.com/posts/${userId}`,
         {
             method: "GET",
             headers: { Authorization: `Bearer ${token}`},

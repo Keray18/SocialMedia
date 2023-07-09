@@ -22,7 +22,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const isFriend = friends.find((friend) =>  friend._id === friendId);
 
     const patchFriend = async () => {
-        const response = await fetch(`http://localhost:3001/users/${_id}/${friendId}`,
+        const response = await fetch(`https://socially-4p72.onrender.com/users/${_id}/${friendId}`,
         {
             method: "PATCH",
             headers: {
@@ -41,7 +41,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
                 <UserImage image={userPicturePath} size="55px" />
                 <Box
                     onClick={ () => {
-                        navigate(`http://localhost:3001/profile/${friendId}`)
+                        navigate(`https://socially-4p72.onrender.com/profile/${friendId}`)
                         navigate(0)
                     }}
                 >
