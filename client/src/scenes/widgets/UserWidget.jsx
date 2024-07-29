@@ -50,7 +50,7 @@ const UserWidget = ({ userId, picturePath }) => {
             <FlexBetween
                 gap="0.5rem"
                 pb="1.1rem"
-                onClick={ () => navigate(`https://socially-4p72.onrender.com/profile/${ userId }`)}
+                onClick={ () => navigate(`profile/${ userId }`)}
             >
                 <FlexBetween gap="1rem">
                     <UserImage image={picturePath} />
