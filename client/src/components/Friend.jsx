@@ -22,7 +22,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const isFriend = friends.find((friend) =>  friend._id === friendId);
 
     const patchFriend = async () => {
-        const response = await fetch(`https://socially-4p72.onrender.com/users/${_id}/${friendId}`,
+        const response = await fetch(`${_id}/${friendId}`,
         {
             method: "PATCH",
             headers: {
